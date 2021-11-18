@@ -1,4 +1,4 @@
-rangosAQI = [
+global.rangosAQI = [
     {etiqueta: 'excelente', de:0, hasta:30},
     {etiqueta: 'bueno', de:31, hasta:50},
     {etiqueta: 'moderado', de:51, hasta:100},
@@ -12,18 +12,13 @@ const calcularPorcentajes = (limitePM10, limitePM2punto5, limiteNO2, limiteCO, l
 }
 
 const registrarAQI = (value)=>{
-
     for(let item of rangosAQI){
-        return item
         if(value >= item.de && value<= item.hasta){
-            return item.etiqueta
-        }else{
-            return 'fuera_de_rango'
+            return item.etiqueta     
         }
     }
+    return 'fuera_de_rango'
 }
-
-console.log(registrarAQI(90));
 
 module.exports.registrarAQI = registrarAQI;
 module.exports.calcularPorcentajes = calcularPorcentajes;
