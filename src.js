@@ -8,7 +8,7 @@ global.rangosAQI = [
 ];
 
 const calcularPorcentajes = (limitePM10, limitePM2punto5, limiteNO2, limiteCO, limiteS02, valorPM10, valorPM2punto5, valorNO2, valorCO, valorS02) =>{
-    
+    console.log('holi')
 }
 
 const registrarAQI = (value)=>{
