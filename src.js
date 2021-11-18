@@ -12,7 +12,7 @@ const calcularPorcentajes = (limitePM10, limitePM2punto5, limiteNO2, limiteCO, l
 }
 
 const registrarAQI = (value)=>{
-    for(let item of rangosAQI){
+    for(let item of global.rangosAQI){
         if(value >= item.de && value<= item.hasta){
             return item.etiqueta     
         }
