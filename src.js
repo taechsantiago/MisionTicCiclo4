@@ -28,13 +28,11 @@ const calcularPocentajes = (limitePM10,
 
     const porcentajes = {
         porcentajePM10: porcentaje(limitePM10, valorPM10),
-        porcentajePMpunto2: porcentaje(limitePM2punto5, valorPM2punto5), 
+        porcentajePM2punto5: porcentaje(limitePM2punto5, valorPM2punto5), 
         porcentajeNO2: porcentaje(limiteNO2, valorNO2), 
         porcentajeCO: porcentaje(limiteCO, valorCO), 
-        porcentajeSO2: porcentaje(limiteS02, valorS02)
+        porcentajeS02: porcentaje(limiteS02, valorS02)
     }
-
-    // calcularPorcentajes(0,100,175,120,200,10,20,75,15,5)
 
     return porcentajes;
 }
