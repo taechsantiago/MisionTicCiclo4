@@ -15,24 +15,24 @@ const porcentaje = (limite, valor) => {
     return 0;
 }
 
-const calcularPocentajes = (limitePM10, 
-                            limitePM2punto5, 
-                            limiteNO2, 
-                            limiteCO, 
-                            limiteS02, 
-                            valorPM10, 
+const calcularPocentajes = async(valorPM10, 
                             valorPM2punto5, 
                             valorNO2, 
                             valorCO, 
                             valorS02) => {
 
+    let response = await fetch("https://misiontic2022upb.vercel.app/api/air-quality/limits");
+    let limits = await response.json();
+
     const porcentajes = {
-        porcentajePM10: porcentaje(limitePM10, valorPM10),
-        porcentajePM2punto5: porcentaje(limitePM2punto5, valorPM2punto5), 
-        porcentajeNO2: porcentaje(limiteNO2, valorNO2), 
-        porcentajeCO: porcentaje(limiteCO, valorCO), 
-        porcentajeS02: porcentaje(limiteS02, valorS02)
+        porcentajePM10: porcentaje(limits.limitePM10, valorPM10),
+        porcentajePM2punto5: porcentaje(limits.limitePM2punto5, valorPM2punto5), 
+        porcentajeNO2: porcentaje(limits.limiteNO2, valorNO2), 
+        porcentajeCO: porcentaje(limits.limiteCO, valorCO), 
+        porcentajeS02: porcentaje(limits.limiteS02, valorS02)
     }
+
+    console.log(porcentajes)
 
     return porcentajes;
 }
