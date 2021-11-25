@@ -32,8 +32,6 @@ const calcularPocentajes = async(valorPM10,
         porcentajeS02: porcentaje(limits.limiteS02, valorS02)
     }
 
-    console.log(porcentajes)
-
     return porcentajes;
 }
 
