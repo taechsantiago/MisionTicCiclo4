@@ -37,8 +37,12 @@ const calcularPocentajes = async(valorPM10,
     return porcentajes;
 }
 
-const registrarAQI = (value)=>{
-    for(let item of global.rangosAQI){
+const registrarAQI = async(value)=>{
+    let indice = -1;
+    let response = await fetch("https://misiontic2022upb.vercel.app/api/air-quality/aqi-ranges");
+    let rangosAQI = await response.json();
+
+    for(let item of rangosAQI){
         if(value >= item.de && value<= item.hasta){
             return item.etiqueta     
         }
