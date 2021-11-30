@@ -6,7 +6,7 @@ import CardView from './components/CardView';
 
 import { getParticlesInfo } from '../infrastructure/handler';
 
-const Dashboard = () => {
+const Indicators = () => {
     const [particlesInfo, setParticlesInfo] = useState([]);
 
     useEffect(() => {
@@ -67,4 +67,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard;
+export default Indicators;
