@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a class="logolink" href="#"><img id="landing_logo" src="logo.png" alt="Logo image"></a>
+            <h1><a class="logolink" href="#">Site Name</a></h1>
+        </div>
+    </header>
+    <nav class="sidebar">
+        <a href="#"><i class="material-icons">search</i><span>Buscar</span></a>
+        <a href="#"><i class="material-icons">home</i><span>Inicio</span></a>
+        <a href="#"><i class="material-icons">insert_chart</i><span>Indicadores</span></a>
+        <a href="#"><i class="material-icons">track_changes</i><span>AQI</span></a>
+        <a href="#"><i class="material-icons">public</i><span>Mapa</span></a>
+        <a href="#"><i class="material-icons">settings</i><span>Ajustes</span></a>
+    </nav>
+    <main>
+        <div class="map-container">
+     
+     <div id='map' class='map'/> 
+      <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=initBingMap&key=AluNyYYbk2RB0UfFVNK1F4GqEJCB8rQexqULNKFW7EeMjQEJcdRZACxknAc4UrAC' async defer></script> 
+     
+      <script> 
+         function initBingMap(endpoint='usepa-aqi') { 
+    
+            const lat = 4.570868;
+            const long = -74.297333;
+            var map = new Microsoft.Maps.Map(document.getElementById('map'), {   
+                  center: new Microsoft.Maps.Location(lat, long),  
+                  zoom:5, 
+            } ); 
+     
+            var options = {  
+               uriConstructor: "https://tiles.aqicn.org/tiles/"+endpoint+"/{zoom}/{x}/{y}.png?token=68bf8fb3bb7d5e0c1391bb75622fa0dae82f5bc4", 
+               minZoom: 1, 
+               maxZoom: 15 
+            }; 
+            var waqiTileSource = new Microsoft.Maps.TileSource(options); 
+            var waqiTilelayer = new Microsoft.Maps.TileLayer({ mercator: waqiTileSource }); 
+            map.layers.insert(waqiTilelayer); 
+         } 
+        
+         </script>
+       </div>
+        <div class="map-buttons">
+            <button class="btn-endpoint" onClick="initBingMap('usepa-aqi')">AQI</button>
+            <button class="btn-endpoint" onClick="initBingMap('usepa-pm25')">PM25</button>
+            <button class="btn-endpoint" onClick="initBingMap('asean-pm10')">PM10</button>
+            <button class="btn-endpoint" onClick="initBingMap('usepa-o3')">O3</button>
+            <button class="btn-endpoint" onClick="initBingMap('usepa-no2')">NO2</button>
+            <button class="btn-endpoint" onClick="initBingMap('usepa-so2')">SO2</button>
+            <button class="btn-endpoint" onClick="initBingMap('usepa-co')">CO</button>    
+        </div>
+     </main> 
+</body>
+</html>

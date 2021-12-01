@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+header {
+    border-bottom: 1px solid #ccc;
+    padding: .5em 1em;
+}
+header::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.logo {
+    float: right;
+}
+.logo h1 {
+    font-size: 1.5em;
+    margin: .7em 0 .3em 0;
+    display: inline-block;
+}
+.logo img {
+    max-width: 70px;
+    float: left;
+    margin: 0 10px 0 0;
+}
+.logolink {
+    text-decoration: none;
+    color: #000;
+}
+.sidebar {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: auto;
+    height: 100%;
+    width: 60px;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    transition: all .3s ease-in-out;
+    overflow: hidden;
+  }
+  .sidebar:hover {
+    width: 160px;
+  }
+  .sidebar a {
+    text-decoration: none;
+    display: block;
+    padding: 20px 20px;
+    color: #000000;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial;
+    width: 30px;
+    white-space: nowrap;
+    transition: all .2s ease-in-out;
+  }
+  .sidebar a span {
+    opacity: 0;
+    transition: all .2s ease-in-out;
+    padding: 15px;
+  }
+  .sidebar:hover a span {
+    opacity: 0.2
+  }
+  .sidebar a:hover span {
+    opacity: 1;
+  }
+  .sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: black !important;
+    width: 150px;
+  }
+  
+  .sidebar a:hover,
+  .sidebar a.active {
+    text-decoration: none;
+    background: #74bee9;
+    color: black;
+  }
+
+
+.sidebar a.active {
+    background: #00ff00;
+  }
+
+  .map-container {
+    max-width: auto;
+  }
+  
+  .map {
+    height:380px;
+    position:relative;
+    margin-left: 60px;
+  }
+  
+  .map-buttons {
+    float: right;
+  }
