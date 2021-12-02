@@ -1,3 +1,23 @@
+const { json } = require('express');
+const express = require('express');
+const app = express();
+
+app.use(express.urlencoded({extended: false}));
+app.use(express,json());
+
+app.get('/api/air-quality/aqi-ranges', (res, req)=>{
+    //get aqi
+    res.json();
+});
+
+app.post('/api/air-quality/aqi-ranges', (res, req)=>{
+    //aqi nuevo
+});
+
+app.get('', (res, req)=>{
+    //limites
+});
+
 global.rangosAQI = [
     {etiqueta: 'excelente', de:0, hasta:30},
     {etiqueta: 'bueno', de:31, hasta:50},
@@ -50,3 +70,4 @@ const registrarAQI = async(value)=>{
 
 module.exports.registrarAQI = registrarAQI;
 module.exports.calcularPocentajes = calcularPocentajes;
+module.exports = app;
