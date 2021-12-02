@@ -13,8 +13,9 @@ export default function Map(){
         }}
         width="500px"
         viewOptions={{
-          center: { latitude: 42.360081, longitude: -71.058884 },
-          mapTypeId: "grayscale",
+          center: { latitude: 4.570868, longitude: -74.297333 },
+          mapTypeId: "aerial",
+          zoom: 5
         }}
       />
     )

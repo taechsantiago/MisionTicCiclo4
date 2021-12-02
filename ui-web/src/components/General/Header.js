@@ -1,6 +1,9 @@
 import React from "react";
 import '../../styles/Home/header.css';
 import { Link } from "react-router-dom";
+import HomeIcon from '@mui/icons-material/Home';
+import InsertChartIcon from '@mui/icons-material/InsertChart';
+import PeopleIcon from '@mui/icons-material/People';
 
 const Header = () => {
   return (
@@ -12,9 +15,9 @@ const Header = () => {
           </div>
       </header>
       <nav className='sidebar'>        
-        <Link to="/" className=''><i class="material-icons">home</i><span>Inicio</span></Link>
-        <Link to="/indicators" className=''><i class="material-icons">insert_chart</i><span>Indicadores</span></Link>
-        <Link to="/join" className='' ><i class="material-icons">settings</i><span>Comunidad</span></Link>
+        <Link to="/" className=''><HomeIcon/><span>Inicio</span></Link>
+        <Link to="/indicators" className=''><InsertChartIcon/><span>Indicadores</span></Link>
+        <Link to="/join" className='' ><PeopleIcon/><span>Comunidad</span></Link>
       </nav>  
     </section>
   );
