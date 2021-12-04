@@ -6,12 +6,12 @@ app.use(express.urlencoded({extended: false}));
 app.use(express,json());
 
 app.get('/api/air-quality/aqi-ranges', (res, req)=>{
-    //get aqi
-    res.json();
+    let aqi_ranges =  res.json();
+    return aqi_ranges;
 });
 
 app.post('/api/air-quality/aqi-ranges', (res, req)=>{
-    //aqi nuevo
+    req.body({"etiqueta": "ejemplo", "de": 301, "hasta": 350 });
 });
 
 app.get('', (res, req)=>{
