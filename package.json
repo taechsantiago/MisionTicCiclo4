@@ -2,5 +2,14 @@
   "dependencies": {
     "bingmaps-react": "^1.1.1",
     "express": "^4.17.1"
+  },
+  "name": "MisionTicCiclo4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/taechsantiago/MisionTicCiclo4.git",
+  "author": "Santiago Betancur Graciano <santybg_94@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src.js"
   }
 }

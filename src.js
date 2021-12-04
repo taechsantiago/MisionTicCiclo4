@@ -2,23 +2,25 @@ const { json } = require('express');
 const express = require('express');
 const app = express();
 
+let aqi_ranges = require('./aqi_ranges.json');
+
 app.use(express.urlencoded({extended: false}));
 app.use(express,json());
 
 app.get('/api/air-quality/aqi-ranges', (res, req)=>{
-    let aqi_ranges =  res.json();
-    return aqi_ranges;
+    res.json(aqi_ranges);
 });
 
 app.post('/api/air-quality/aqi-ranges', (res, req)=>{
     req.body({"etiqueta": "ejemplo", "de": 301, "hasta": 350 });
+    aqi_ranges.push({"etiqueta": "ejemplo", "de": 301, "hasta": 350 })
 });
 
 app.get('', (res, req)=>{
     //limites
 });
 
-global.rangosAQI = [
+/* global.rangosAQI = [
     {etiqueta: 'excelente', de:0, hasta:30},
     {etiqueta: 'bueno', de:31, hasta:50},
     {etiqueta: 'moderado', de:51, hasta:100},
@@ -69,5 +71,5 @@ const registrarAQI = async(value)=>{
 }
 
 module.exports.registrarAQI = registrarAQI;
-module.exports.calcularPocentajes = calcularPocentajes;
+module.exports.calcularPocentajes = calcularPocentajes; */
 module.exports = app;
