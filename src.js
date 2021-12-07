@@ -1,24 +1,31 @@
-const { json } = require('express');
 const express = require('express');
 const app = express();
 
 let aqi_ranges = require('./aqi_ranges.json');
+const limits = require('./limits.json');
 
 app.use(express.urlencoded({extended: false}));
-app.use(express,json());
+app.use(express.json());
 
-app.get('/api/air-quality/aqi-ranges', (res, req)=>{
+app.get('/api/air-quality/aqi-ranges', (req, res)=>{
     res.json(aqi_ranges);
 });
 
-app.post('/api/air-quality/aqi-ranges', (res, req)=>{
-    req.body({"etiqueta": "ejemplo", "de": 301, "hasta": 350 });
-    aqi_ranges.push({"etiqueta": "ejemplo", "de": 301, "hasta": 350 })
+app.post('/api/air-quality/aqi-ranges', (req, res)=>{
+    // req.body({"etiqueta": "ejemplo", "de": 301, "hasta": 350 });
+    console.log(req.body);
+    aqi_ranges.push(req.body);
+    res.json(aqi_ranges);
 });
 
-app.get('', (res, req)=>{
-    //limites
+app.get('/api/air-quality/limits', (req, res)=>{
+    res.json(limits);
 });
+
+/*const server = app.listen(3000, () => {
+    let port = server.address().port;
+    console.log("Running in port ", port);
+})*/
 
 /* global.rangosAQI = [
     {etiqueta: 'excelente', de:0, hasta:30},
