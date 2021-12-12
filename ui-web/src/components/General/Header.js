@@ -4,14 +4,15 @@ import { Link } from "react-router-dom";
 import HomeIcon from '@mui/icons-material/Home';
 import InsertChartIcon from '@mui/icons-material/InsertChart';
 import PeopleIcon from '@mui/icons-material/People';
+import logo from '../../images/logo.png'
 
 const Header = () => {
   return (
     <section>
       <header>
-          <div class="logo">
-              <a class="logolink" href="#"><img id="landing_logo" src="logo.png" alt="Logo"/></a>
-              <h1><a class="logolink" href="#">Site Name</a></h1>
+          <div className="logo">
+              <a className="logolink" href="#"><img id="landing_logo" src={logo} alt="Logo"/></a>
+              <h1><a className="logolink" href="#">Calidad del Aire</a></h1>
           </div>
       </header>
       <nav className='sidebar'>        
